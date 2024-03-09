@@ -1,0 +1,969 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ITests</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jura:wght@300..700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/script.js" defer></script>
+</head>
+<body>
+    <div class="wrapper">
+
+    <!-- на главной доп-класс start -->
+    <header class="header start">
+        <div class="header__container container">
+            <a href="index.html" class="header__logo">
+                <span class="color">it</span>/tests
+            </a>
+            <div class="header__column">
+                <div class="header__links">
+                    <a href="#" class="header__link header__link-start">О нас</a>
+                    <a href="#" class="header__link header__link-start">Контакты</a>
+                    <a href="#" id="statButton" class="header__link">Статистика</a>
+                    <a href="#" id="rateButton" class="header__link">Рейтинг</a>
+                </div>
+                <div class="header__buttons">
+                  <button id="switch_button" class="header__button">
+                    <svg width="60" height="48" viewBox="0 0 60 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="1" y="9" width="50" height="30" rx="15" stroke="#E3DEEC" stroke-width="2"/>
+                        <rect id="switch" x="28" y="16" width="16" height="16" rx="8" fill="#E3DEEC"/>
+                    </svg>
+                  </button> 
+                  <button id="user" class="header__button">
+                    <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="1" y="1" width="38" height="38" rx="19" stroke="#E3DEEC" stroke-width="2"/>
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M26.0002 16C26.0002 19.3137 23.314 22 20.0002 22C16.6865 22 14.0002 19.3137 14.0002 16C14.0002 12.6863 16.6865 10 20.0002 10C23.314 10 26.0002 12.6863 26.0002 16ZM24.0002 16C24.0002 18.2091 22.2094 20 20.0002 20C17.7911 20 16.0002 18.2091 16.0002 16C16.0002 13.7909 17.7911 12 20.0002 12C22.2094 12 24.0002 13.7909 24.0002 16Z" fill="#E3DEEC"/>
+                        <path d="M20.0002 25C13.5259 25 8.00952 28.8284 5.9082 34.192C6.4201 34.7004 6.95934 35.1812 7.52353 35.6321C9.08827 30.7077 13.997 27 20.0002 27C26.0035 27 30.9122 30.7077 32.477 35.6321C33.0412 35.1812 33.5804 34.7004 34.0923 34.1921C31.991 28.8284 26.4746 25 20.0002 25Z" fill="#E3DEEC"/>
+                    </svg>
+                  </button>  
+                  <button id="logIn_button">
+                    Войти
+                  </button>
+                </div>
+            </div>
+        </div>
+    </header>
+    <section id="main" class="main">
+        <div class="main__container container">
+            <div class="main__column">
+                <h1 class="main__title">
+                    Проверьте свои знания <br> с помощью тестов
+                </h1>
+                <p class="main__subtitle">
+                    Основанных на <span>реальных собеседованиях</span>
+                </p>
+
+                <div class="main__particle">
+                    <div class="main__particle-item">Automation QA</div>
+                    <div class="main__particle-item">Frontend developer</div>
+                    <div class="main__particle-item">Manual QA</div>
+                    <div class="main__particle-item">Backend developer</div>
+                </div>
+                <div class="main__button">
+                    <button id="signUp_button" class="main__button-button">Зарегестрироваться</button>
+                </div>
+            </div>
+            <div class="main__column">
+                <div class="main__column-item">
+                    <span class="main__column-item-num">4</span>
+                    <p class="main__column-item-text">Направления</p>
+                </div>
+                <div class="main__column-item">
+                    <svg width="45" height="44" viewBox="0 0 45 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M11.4992 17.2814H2.07394C1.20873 17.2814 0.509204 17.9812 0.5 18.8558V42.4256C0.5 43.3003 1.20873 44 2.07394 44H11.4992C12.3736 44 13.0731 43.2911 13.0731 42.4256V18.8558C13.0731 17.9812 12.3644 17.2814 11.4992 17.2814ZM27.2109 0H17.7857C16.9205 0 16.2118 0.699728 16.2118 1.56518V42.4256C16.2118 43.3003 16.9205 44 17.7857 44H27.2109C28.0853 44 28.7849 43.2911 28.7849 42.4256V1.57439C28.7849 0.699728 28.0761 0 27.2109 0ZM42.9227 12.5675H33.4975C32.6231 12.5675 31.9235 13.2672 31.9235 14.1419V42.4256C31.9235 43.3003 32.6323 44 33.4975 44H42.9227C43.7971 44 44.4967 43.2911 44.4967 42.4256V14.1419C44.4967 13.2672 43.7879 12.5675 42.9227 12.5675Z" fill="#8D8CEC"/>
+                    </svg>
+                    <span class="main__column-item-title">Личная статистика</span>
+                    <p class="main__column-item-desc">Подготовься к собеседованию<br> с помощью тестов</p>
+                </div>
+                <div class="main__column-item">
+                    <svg width="65" height="64" viewBox="0 0 65 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M14.5 14V27.775C14.5 37.7 22.45 45.925 32.375 46C34.7493 46.0165 37.1034 45.5631 39.3017 44.6659C41.5 43.7687 43.4991 42.4454 45.1838 40.7723C46.8685 39.0992 48.2056 37.1093 49.118 34.9173C50.0304 32.7253 50.5001 30.3744 50.5 28V14C50.5 13.4696 50.2893 12.9609 49.9142 12.5858C49.5391 12.2107 49.0304 12 48.5 12H16.5C15.9696 12 15.4609 12.2107 15.0858 12.5858C14.7107 12.9609 14.5 13.4696 14.5 14Z" fill="#8D8CEC" stroke="#8D8CEC" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M24.5 56H40.5" stroke="#8D8CEC" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M32.5 46V56" stroke="#8D8CEC" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M50.0508 32H52.5008C54.6225 32 56.6573 31.1571 58.1576 29.6569C59.6579 28.1566 60.5008 26.1217 60.5008 24V20C60.5008 19.4696 60.2901 18.9609 59.915 18.5858C59.5399 18.2107 59.0312 18 58.5008 18H50.5008" stroke="#8D8CEC" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M14.9996 32H12.4746C10.3529 32 8.31805 31.1571 6.81776 29.6569C5.31746 28.1566 4.47461 26.1217 4.47461 24V20C4.47461 19.4696 4.68532 18.9609 5.0604 18.5858C5.43547 18.2107 5.94418 18 6.47461 18H14.4746" stroke="#8D8CEC" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <span class="main__column-item-title">Система рейтингов</span>
+                    <p class="main__column-item-desc">Сравни себя со специалистами <br> в твоей профессии</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="module" class="module">
+        <div class="module__container container">
+            <div class="module__body">
+                <h2 class="module__title">
+                    Выбор модуля
+                </h2>
+                <div class="module__tab">
+                    <div class="module__nav">
+                        <a href="#content-1" class="module__link">
+                            Manual QA
+                            <svg width="40" height="34" viewBox="0 0 40 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M0.624307 17.1777C0.624307 16.1422 1.46377 15.3027 2.49931 15.3027L33.328 15.3027L21.7572 3.73194C21.025 2.99971 21.025 1.81252 21.7572 1.08029C22.4894 0.348056 23.6766 0.348057 24.4089 1.08029L39.1805 15.8519C39.9127 16.5841 39.9127 17.7713 39.1805 18.5036L24.4089 33.2752C23.6766 34.0074 22.4894 34.0074 21.7572 33.2752C21.025 32.5429 21.025 31.3558 21.7572 30.6235L33.328 19.0527L2.49931 19.0527C1.46377 19.0527 0.624307 18.2133 0.624307 17.1777Z" fill="#5E5CE6"/>
+                            </svg>
+                        </a>
+                        <a href="#content-2" class="module__link">
+                            Automation QA
+                            <svg width="40" height="34" viewBox="0 0 40 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M0.624307 17.1777C0.624307 16.1422 1.46377 15.3027 2.49931 15.3027L33.328 15.3027L21.7572 3.73194C21.025 2.99971 21.025 1.81252 21.7572 1.08029C22.4894 0.348056 23.6766 0.348057 24.4089 1.08029L39.1805 15.8519C39.9127 16.5841 39.9127 17.7713 39.1805 18.5036L24.4089 33.2752C23.6766 34.0074 22.4894 34.0074 21.7572 33.2752C21.025 32.5429 21.025 31.3558 21.7572 30.6235L33.328 19.0527L2.49931 19.0527C1.46377 19.0527 0.624307 18.2133 0.624307 17.1777Z" fill="#5E5CE6"/>
+                            </svg>
+                        </a>
+                        <a href="#content-3" class="module__link lock">
+                            Frontend developer
+                            <svg width="29" height="40" viewBox="0 0 29 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M9.20399 5.78155C10.6036 4.4083 12.508 3.63184 14.4995 3.63184C16.491 3.63184 18.3953 4.4083 19.795 5.78155C21.1937 7.15386 21.9741 9.00895 21.9741 10.9371V17.2266H7.02488V10.9371C7.02488 9.00895 7.8053 7.15386 9.20399 5.78155ZM4.03644 17.4138C4.02881 17.3524 4.02488 17.29 4.02488 17.2266V10.9371C4.02488 8.19466 5.13553 5.57045 7.10297 3.64013C9.06944 1.71076 11.7306 0.631836 14.4995 0.631836C17.2684 0.631836 19.9295 1.71076 21.896 3.64013C23.8634 5.57045 24.9741 8.19466 24.9741 10.9371V17.2266C24.9741 17.29 24.9702 17.3525 24.9625 17.4138C27.063 18.0062 28.6024 19.9366 28.6024 22.2266V34.8687C28.6024 37.6301 26.3638 39.8687 23.6024 39.8687H5.39648C2.63506 39.8687 0.396484 37.6301 0.396484 34.8687V22.2266C0.396484 19.9366 1.93596 18.0061 4.03644 17.4138Z" fill="#797979"/>
+                            </svg>
+                        </a>
+                        <a href="#content-4" class="module__link lock">
+                            Backend developer
+                            <svg width="29" height="40" viewBox="0 0 29 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M9.20399 5.78155C10.6036 4.4083 12.508 3.63184 14.4995 3.63184C16.491 3.63184 18.3953 4.4083 19.795 5.78155C21.1937 7.15386 21.9741 9.00895 21.9741 10.9371V17.2266H7.02488V10.9371C7.02488 9.00895 7.8053 7.15386 9.20399 5.78155ZM4.03644 17.4138C4.02881 17.3524 4.02488 17.29 4.02488 17.2266V10.9371C4.02488 8.19466 5.13553 5.57045 7.10297 3.64013C9.06944 1.71076 11.7306 0.631836 14.4995 0.631836C17.2684 0.631836 19.9295 1.71076 21.896 3.64013C23.8634 5.57045 24.9741 8.19466 24.9741 10.9371V17.2266C24.9741 17.29 24.9702 17.3525 24.9625 17.4138C27.063 18.0062 28.6024 19.9366 28.6024 22.2266V34.8687C28.6024 37.6301 26.3638 39.8687 23.6024 39.8687H5.39648C2.63506 39.8687 0.396484 37.6301 0.396484 34.8687V22.2266C0.396484 19.9366 1.93596 18.0061 4.03644 17.4138Z" fill="#797979"/>
+                            </svg>
+                        </a>
+                    </div>
+                    <div class="module__content" id="content-1">
+                        <span class="module__content-title">
+                            Темы: 1
+                        </span>
+                        <ul class="module__content-list">
+                            <li class="module__content-item">
+                                Методологии тестирования
+                            </li>
+                            <li class="module__content-item">
+                               Базы данных
+                            </li>
+                            <li class="module__content-item">
+                                Ручное функциональное тестирование
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="module__content" id="content-2">
+                        <span class="module__content-title">
+                            Темы: 2
+                        </span>
+                        <ul class="module__content-list">
+                            <li class="module__content-item">
+                                Методологии тестирования
+                            </li>
+                            <li class="module__content-item">
+                               Базы данных
+                            </li>
+                            <li class="module__content-item">
+                                Ручное функциональное тестирование
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="module__content" id="content-3">
+                        <span class="module__content-title">
+                            Темы: 3
+                        </span>
+                        <ul class="module__content-list">
+                            <li class="module__content-item">
+                                Методологии тестирования
+                            </li>
+                            <li class="module__content-item">
+                               Базы данных
+                            </li>
+                            <li class="module__content-item">
+                                Ручное функциональное тестирование
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="module__content" id="content-4">
+                        <span class="module__content-title">
+                            Темы: 4
+                        </span>
+                        <ul class="module__content-list">
+                            <li class="module__content-item">
+                                Методологии тестирования
+                            </li>
+                            <li class="module__content-item">
+                               Базы данных
+                            </li>
+                            <li class="module__content-item">
+                                Ручное функциональное тестирование
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="statistics" class="statistics">
+        <div class="statistics__container container">
+            <div class="statistics__body">
+                <button id="statBack" class="statistics__back">
+                    <svg width="26" height="22" viewBox="0 0 26 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M25.4014 10.8867C25.4014 11.5495 24.8641 12.0867 24.2014 12.0867L4.47102 12.0867L11.8763 19.492C12.345 19.9607 12.345 20.7205 11.8763 21.1891C11.4077 21.6577 10.6479 21.6577 10.1793 21.1891L0.725436 11.7352C0.256807 11.2666 0.256807 10.5068 0.725436 10.0382L10.1793 0.584352C10.6479 0.115723 11.4077 0.115723 11.8763 0.584352C12.345 1.05298 12.345 1.81278 11.8763 2.28141L4.47102 9.68672L24.2014 9.68672C24.8641 9.68672 25.4014 10.224 25.4014 10.8867Z" fill="#C4AEF2"/>
+                    </svg>
+                </button>
+                <h2 class="statistics__title">
+                    Статистика
+                </h2>
+                <div class="statistics__header">
+                    <span class="statistics__header-title">
+                        Доступные модули
+                    </span>
+                    <div class="statistics__header-navigation">
+                        <a href="#Manual" class="statistics__header-link select">Manual QA</a>
+                        <a href="#Automation" class="statistics__header-link">Automation QA</a>
+                    </div>
+                </div>
+                <div class="statistics__content" id="Manual">
+                    <div class="statistics__item null ">
+                        <div class="statistics__item-title">
+                            Методология тестирования Manual
+                        </div>
+                        <div class="statistics__item-data">
+                            <span class="statistics__item-boolean">Пройден</span>
+                            <span class="statistics__item-time">22.01.2024</span>
+                            <span class="statistics__item-null">-</span>
+                        </div>
+                        <div class="statistics__item-best">
+                            Лучший результат
+                            <svg width="18" height="14" viewBox="0 0 18 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M6 14L0 8.04255L2.1 5.95745L6 9.82979L15.9 0L18 2.08511L6 14Z" fill="white"/>
+                            </svg>
+                        </div>
+                        <span class="statistics__item-answer">10/12 верных ответов</span>
+                        <button class="header__link statistics__start">Пройти</button>
+                    </div>
+                    <div class="statistics__item best">
+                        <div class="statistics__item-title">
+                            Методология тестирования Manual
+                        </div>
+                        <div class="statistics__item-data">
+                            <span class="statistics__item-boolean">Пройден</span>
+                            <span class="statistics__item-time">22.01.2024</span>
+                            <span class="statistics__item-null">-</span>
+                        </div>
+                        <div class="statistics__item-best">
+                            Лучший результат
+                            <svg width="18" height="14" viewBox="0 0 18 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M6 14L0 8.04255L2.1 5.95745L6 9.82979L15.9 0L18 2.08511L6 14Z" fill="white"/>
+                            </svg>
+                        </div>
+                        <span class="statistics__item-answer">10/12 верных ответов</span>
+                        <button class="header__link statistics__start">Пройти</button>
+                    </div>
+                    <div class="statistics__item null">
+                        <div class="statistics__item-title">
+                            Методология тестирования Manual
+                        </div>
+                        <div class="statistics__item-data">
+                            <span class="statistics__item-boolean">Пройден</span>
+                            <span class="statistics__item-time">22.01.2024</span>
+                            <span class="statistics__item-null">-</span>
+                        </div>
+                        <div class="statistics__item-best">
+                            Лучший результат
+                            <svg width="18" height="14" viewBox="0 0 18 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M6 14L0 8.04255L2.1 5.95745L6 9.82979L15.9 0L18 2.08511L6 14Z" fill="white"/>
+                            </svg>
+                        </div>
+                        <span class="statistics__item-answer">10/12 верных ответов</span>
+                        <button class="header__link statistics__start">Пройти</button>
+                    </div>
+                    <div class="statistics__item">
+                        <div class="statistics__item-title">
+                            Методология тестирования Manual
+                        </div>
+                        <div class="statistics__item-data">
+                            <span class="statistics__item-boolean">Пройден</span>
+                            <span class="statistics__item-time">22.01.2024</span>
+                            <span class="statistics__item-null">-</span>
+                        </div>
+                        <div class="statistics__item-best">
+                            Лучший результат
+                            <svg width="18" height="14" viewBox="0 0 18 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M6 14L0 8.04255L2.1 5.95745L6 9.82979L15.9 0L18 2.08511L6 14Z" fill="white"/>
+                            </svg>
+                        </div>
+                        <span class="statistics__item-answer">10/12 верных ответов</span>
+                        <button class="header__link statistics__start">Пройти</button>
+                    </div>
+                    <div class="statistics__item">
+                        <div class="statistics__item-title">
+                            Методология тестирования Manual
+                        </div>
+                        <div class="statistics__item-data">
+                            <span class="statistics__item-boolean">Пройден</span>
+                            <span class="statistics__item-time">22.01.2024</span>
+                            <span class="statistics__item-null">-</span>
+                        </div>
+                        <div class="statistics__item-best">
+                            Лучший результат
+                            <svg width="18" height="14" viewBox="0 0 18 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M6 14L0 8.04255L2.1 5.95745L6 9.82979L15.9 0L18 2.08511L6 14Z" fill="white"/>
+                            </svg>
+                        </div>
+                        <span class="statistics__item-answer">10/12 верных ответов</span>
+                        <button class="header__link statistics__start">Пройти</button>
+                    </div>
+                </div>
+                <div class="statistics__content" id="Automation">
+                    <div class="statistics__item best">
+                        <div class="statistics__item-title">
+                            Методология тестирования Manual
+                        </div>
+                        <div class="statistics__item-data">
+                            <span class="statistics__item-boolean">Пройден</span>
+                            <span class="statistics__item-time">22.01.2024</span>
+                            <span class="statistics__item-null">-</span>
+                        </div>
+                        <div class="statistics__item-best">
+                            Лучший результат
+                            <svg width="18" height="14" viewBox="0 0 18 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M6 14L0 8.04255L2.1 5.95745L6 9.82979L15.9 0L18 2.08511L6 14Z" fill="white"/>
+                            </svg>
+                        </div>
+                        <span class="statistics__item-answer">10/12 верных ответов</span>
+                        <button class="header__link statistics__start">Пройти</button>
+                    </div>
+                    <div class="statistics__item null">
+                        <div class="statistics__item-title">
+                            Методология тестирования Manual
+                        </div>
+                        <div class="statistics__item-data">
+                            <span class="statistics__item-boolean">Пройден</span>
+                            <span class="statistics__item-time">22.01.2024</span>
+                            <span class="statistics__item-null">-</span>
+                        </div>
+                        <div class="statistics__item-best">
+                            Лучший результат
+                            <svg width="18" height="14" viewBox="0 0 18 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M6 14L0 8.04255L2.1 5.95745L6 9.82979L15.9 0L18 2.08511L6 14Z" fill="white"/>
+                            </svg>
+                        </div>
+                        <span class="statistics__item-answer">10/12 верных ответов</span>
+                        <button class="header__link statistics__start">Пройти</button>
+                    </div>
+                    <div class="statistics__item null">
+                        <div class="statistics__item-title">
+                            Методология тестирования Manual
+                        </div>
+                        <div class="statistics__item-data">
+                            <span class="statistics__item-boolean">Пройден</span>
+                            <span class="statistics__item-time">22.01.2024</span>
+                            <span class="statistics__item-null">-</span>
+                        </div>
+                        <div class="statistics__item-best">
+                            Лучший результат
+                            <svg width="18" height="14" viewBox="0 0 18 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M6 14L0 8.04255L2.1 5.95745L6 9.82979L15.9 0L18 2.08511L6 14Z" fill="white"/>
+                            </svg>
+                        </div>
+                        <span class="statistics__item-answer">10/12 верных ответов</span>
+                        <button class="header__link statistics__start">Пройти</button>
+                    </div>
+                    <div class="statistics__item best">
+                        <div class="statistics__item-title">
+                            Методология тестирования Manual
+                        </div>
+                        <div class="statistics__item-data">
+                            <span class="statistics__item-boolean">Пройден</span>
+                            <span class="statistics__item-time">22.01.2024</span>
+                            <span class="statistics__item-null">-</span>
+                        </div>
+                        <div class="statistics__item-best">
+                            Лучший результат
+                            <svg width="18" height="14" viewBox="0 0 18 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M6 14L0 8.04255L2.1 5.95745L6 9.82979L15.9 0L18 2.08511L6 14Z" fill="white"/>
+                            </svg>
+                        </div>
+                        <span class="statistics__item-answer">10/12 верных ответов</span>
+                        <button class="header__link statistics__start">Пройти</button>
+                    </div>
+                    <div class="statistics__item">
+                        <div class="statistics__item-title">
+                            Методология тестирования Manual
+                        </div>
+                        <div class="statistics__item-data">
+                            <span class="statistics__item-boolean">Пройден</span>
+                            <span class="statistics__item-time">22.01.2024</span>
+                            <span class="statistics__item-null">-</span>
+                        </div>
+                        <div class="statistics__item-best">
+                            Лучший результат
+                            <svg width="18" height="14" viewBox="0 0 18 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M6 14L0 8.04255L2.1 5.95745L6 9.82979L15.9 0L18 2.08511L6 14Z" fill="white"/>
+                            </svg>
+                        </div>
+                        <span class="statistics__item-answer">10/12 верных ответов</span>
+                        <button class="header__link statistics__start">Пройти</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="rate" class="rate">
+        <div class="rate__container container">
+            <div class="rate__body">
+                <div class="rate__header">
+                    <button id="RateBack" class="statistics__back">
+                        <svg width="26" height="22" viewBox="0 0 26 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M25.4014 10.8867C25.4014 11.5495 24.8641 12.0867 24.2014 12.0867L4.47102 12.0867L11.8763 19.492C12.345 19.9607 12.345 20.7205 11.8763 21.1891C11.4077 21.6577 10.6479 21.6577 10.1793 21.1891L0.725436 11.7352C0.256807 11.2666 0.256807 10.5068 0.725436 10.0382L10.1793 0.584352C10.6479 0.115723 11.4077 0.115723 11.8763 0.584352C12.345 1.05298 12.345 1.81278 11.8763 2.28141L4.47102 9.68672L24.2014 9.68672C24.8641 9.68672 25.4014 10.224 25.4014 10.8867Z" fill="#C4AEF2"/>
+                        </svg>
+                    </button>
+                    <h3 class="rate__title">
+                        Рейтинг
+                    </h3>
+                    <form class="rate__form-search signUp__form">
+                        <input type="text" class="rate__search" placeholder="Поиск по Username/ID">
+                        <button class="rate__search-button">
+                            <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M11.76 10.27L17.49 16L16 17.49L10.27 11.76C9.2 12.53 7.91 13 6.5 13C2.91 13 0 10.09 0 6.5C0 2.91 2.91 0 6.5 0C10.09 0 13 2.91 13 6.5C13 7.91 12.53 9.2 11.76 10.27ZM6.5 2C4.01 2 2 4.01 2 6.5C2 8.99 4.01 11 6.5 11C8.99 11 11 8.99 11 6.5C11 4.01 8.99 2 6.5 2Z" fill="#9EA2B7"/>
+                            </svg>
+                        </button>
+                    </form>
+                </div>
+                <div class="rate__nav">
+                    <span class="rate__nav-title">Доступные модули</span>
+                    <div class="rate__nav-list statistics__header-navigation">
+                        <a class="rate__nav-button statistics__header-link" href="">Manual QA</a>
+                        <a class="rate__nav-button statistics__header-link" href="">Automation QA</a>
+                        <a class="rate__nav-button statistics__header-link" href="">Frontend developer</a>
+                        <a class="rate__nav-button statistics__header-link" href="">Backend developer</a>
+                    </div>
+                    <div class="rate__filters">
+                        <button class="rate__filters-button">
+                            <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M22 24H7" stroke="#E3DEEC" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M32 24H28" stroke="#E3DEEC" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M25 27C26.6569 27 28 25.6569 28 24C28 22.3431 26.6569 21 25 21C23.3431 21 22 22.3431 22 24C22 25.6569 23.3431 27 25 27Z" stroke="#E3DEEC" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M13 12H7" stroke="#E3DEEC" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M32 12H19" stroke="#E3DEEC" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M16 15C17.6569 15 19 13.6569 19 12C19 10.3431 17.6569 9 16 9C14.3431 9 13 10.3431 13 12C13 13.6569 14.3431 15 16 15Z" stroke="#E3DEEC" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+                <div id="rate__content" class="rate__content">
+                    <div class="rate__item main">
+                        <div class="rate__place">
+                            <span class="rate__place-text">3</span>
+                            <svg width="80" height="81" viewBox="0 0 80 81" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M17.5 18V35.2188C17.5 47.625 27.4375 57.9062 39.8438 58C42.8116 58.0206 45.7542 57.4538 48.5021 56.3323C51.25 55.2108 53.7489 53.5568 55.8548 51.4654C57.9607 49.374 59.632 46.8867 60.7725 44.1466C61.913 41.4066 62.5001 38.4679 62.5 35.5V18C62.5 17.337 62.2366 16.7011 61.7678 16.2322C61.2989 15.7634 60.663 15.5 60 15.5H20C19.337 15.5 18.7011 15.7634 18.2322 16.2322C17.7634 16.7011 17.5 17.337 17.5 18Z" fill="#282E4C" stroke="#282E4C" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M30 70.5H50" stroke="#282E4C" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M40 58V70.5" stroke="#282E4C" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M61.9375 40.5H65C67.6522 40.5 70.1957 39.4464 72.0711 37.5711C73.9464 35.6957 75 33.1522 75 30.5V25.5C75 24.837 74.7366 24.2011 74.2678 23.7322C73.7989 23.2634 73.163 23 72.5 23H62.5" stroke="#282E4C" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M18.125 40.5H14.9688C12.3166 40.5 9.77305 39.4464 7.89768 37.5711C6.02232 35.6957 4.96875 33.1522 4.96875 30.5V25.5C4.96875 24.837 5.23214 24.2011 5.70098 23.7322C6.16982 23.2634 6.80571 23 7.46875 23H17.4688" stroke="#282E4C" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                        <p class="rate__desc">
+                            место в рейтинге в общем зачёте по модулю
+                        </p>
+                        <button class="rate__showAll">
+                            Посмотреть результаты
+                        </button>
+                    </div>
+                    <div class="rate__item statistics__item ">
+                        <p class="rate__item-title">Методология тестирования</p>
+                        <span class="rate__item-rate">10/12 верных ответов</span>
+                        <div class="rate__item-row">
+                            <div class="rate__item-place">
+                                <span class="rate__item-placeNum">8</span>
+                                <span class="rate__item-placeText">место</span>
+                            </div>
+                            <button class="rate__showAll">
+                                Посмотреть результаты
+                            </button>
+                        </div>
+                    </div>
+                    <div class="rate__item statistics__item ">
+                        <p class="rate__item-title">Методология тестирования</p>
+                        <span class="rate__item-rate">10/12 верных ответов</span>
+                        <div class="rate__item-row">
+                            <div class="rate__item-place">
+                                <span class="rate__item-placeNum">8</span>
+                                <span class="rate__item-placeText">место</span>
+                            </div>
+                            <button class="rate__showAll">
+                                Посмотреть результаты
+                            </button>
+                        </div>
+                    </div>
+                    <div class="rate__item statistics__item ">
+                        <p class="rate__item-title">Методология тестирования</p>
+                        <span class="rate__item-rate">10/12 верных ответов</span>
+                        <div class="rate__item-row">
+                            <div class="rate__item-place">
+                                <span class="rate__item-placeNum">8</span>
+                                <span class="rate__item-placeText">место</span>
+                            </div>
+                            <button class="rate__showAll">
+                                Посмотреть результаты
+                            </button>
+                        </div>
+                    </div>
+                    <div class="rate__item statistics__item ">
+                        <p class="rate__item-title">Методология тестирования</p>
+                        <span class="rate__item-rate">10/12 верных ответов</span>
+                        <div class="rate__item-row">
+                            <div class="rate__item-place">
+                                <span class="rate__item-placeNum">8</span>
+                                <span class="rate__item-placeText">место</span>
+                            </div>
+                            <button class="rate__showAll">
+                                Посмотреть результаты
+                            </button>
+                        </div>
+                    </div>
+                    <div class="rate__item statistics__item ">
+                        <p class="rate__item-title">Методология тестирования</p>
+                        <span class="rate__item-rate">10/12 верных ответов</span>
+                        <div class="rate__item-row">
+                            <div class="rate__item-place">
+                                <span class="rate__item-placeNum">8</span>
+                                <span class="rate__item-placeText">место</span>
+                            </div>
+                            <button class="rate__showAll">
+                                Посмотреть результаты
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div id="rate__list" class="rate__list">
+                    <div class="rate__list-header">
+                        <span class="rate__list-title">Методология тестирования</span>
+                        <button id="rateClose" class="rate__list-close">
+                            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M14 1.41L12.59 0L7 5.59L1.41 0L0 1.41L5.59 7L0 12.59L1.41 14L7 8.41L12.59 14L14 12.59L8.41 7L14 1.41Z" fill="#E3DEEC"/>
+                            </svg> 
+                        </button>
+                    </div>
+                    <div class="rate__list-row">
+                        <div class="rate__top">
+                            <div class="rate__top-item">
+                                <div class="rate__top-item-place">
+                                    <span>1</span>
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M5.25 5.25V10.4156C5.25 14.1375 8.23125 17.2219 11.9531 17.25C12.8435 17.2562 13.7263 17.0862 14.5506 16.7497C15.375 16.4133 16.1247 15.917 16.7564 15.2896C17.3882 14.6622 17.8896 13.916 18.2317 13.094C18.5739 12.272 18.75 11.3904 18.75 10.5V5.25C18.75 5.05109 18.671 4.86032 18.5303 4.71967C18.3897 4.57902 18.1989 4.5 18 4.5H6C5.80109 4.5 5.61032 4.57902 5.46967 4.71967C5.32902 4.86032 5.25 5.05109 5.25 5.25Z" fill="#282E4C" stroke="#282E4C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M9 21H15" stroke="#282E4C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M12 17.25V21" stroke="#282E4C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M18.582 12H19.5008C20.2964 12 21.0595 11.6839 21.6221 11.1213C22.1847 10.5587 22.5008 9.79565 22.5008 9V7.5C22.5008 7.30109 22.4218 7.11032 22.2811 6.96967C22.1405 6.82902 21.9497 6.75 21.7508 6.75H18.7508" stroke="#282E4C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M5.43906 12H4.49219C3.69654 12 2.93348 11.6839 2.37087 11.1213C1.80826 10.5587 1.49219 9.79565 1.49219 9V7.5C1.49219 7.30109 1.57121 7.11032 1.71186 6.96967C1.85251 6.82902 2.04328 6.75 2.24219 6.75H5.24219" stroke="#282E4C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </div>
+                                <span class="rate__top-item-nickname">pro3221337</span>
+                                <span class="rate__top-item-percent">99%</span>
+                            </div>
+                            <div class="rate__top-item">
+                                <div class="rate__top-item-place">
+                                    <span>2</span>
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M5.25 5.25V10.4156C5.25 14.1375 8.23125 17.2219 11.9531 17.25C12.8435 17.2562 13.7263 17.0862 14.5506 16.7497C15.375 16.4133 16.1247 15.917 16.7564 15.2896C17.3882 14.6622 17.8896 13.916 18.2317 13.094C18.5739 12.272 18.75 11.3904 18.75 10.5V5.25C18.75 5.05109 18.671 4.86032 18.5303 4.71967C18.3897 4.57902 18.1989 4.5 18 4.5H6C5.80109 4.5 5.61032 4.57902 5.46967 4.71967C5.32902 4.86032 5.25 5.05109 5.25 5.25Z" fill="#282E4C" stroke="#282E4C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M9 21H15" stroke="#282E4C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M12 17.25V21" stroke="#282E4C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M18.582 12H19.5008C20.2964 12 21.0595 11.6839 21.6221 11.1213C22.1847 10.5587 22.5008 9.79565 22.5008 9V7.5C22.5008 7.30109 22.4218 7.11032 22.2811 6.96967C22.1405 6.82902 21.9497 6.75 21.7508 6.75H18.7508" stroke="#282E4C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M5.43906 12H4.49219C3.69654 12 2.93348 11.6839 2.37087 11.1213C1.80826 10.5587 1.49219 9.79565 1.49219 9V7.5C1.49219 7.30109 1.57121 7.11032 1.71186 6.96967C1.85251 6.82902 2.04328 6.75 2.24219 6.75H5.24219" stroke="#282E4C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </div>
+                                <span class="rate__top-item-nickname">pro3221337</span>
+                                <span class="rate__top-item-percent">98%</span>
+                            </div>
+                            <div class="rate__top-item">
+                                <div class="rate__top-item-place">
+                                    <span>3</span>
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M5.25 5.25V10.4156C5.25 14.1375 8.23125 17.2219 11.9531 17.25C12.8435 17.2562 13.7263 17.0862 14.5506 16.7497C15.375 16.4133 16.1247 15.917 16.7564 15.2896C17.3882 14.6622 17.8896 13.916 18.2317 13.094C18.5739 12.272 18.75 11.3904 18.75 10.5V5.25C18.75 5.05109 18.671 4.86032 18.5303 4.71967C18.3897 4.57902 18.1989 4.5 18 4.5H6C5.80109 4.5 5.61032 4.57902 5.46967 4.71967C5.32902 4.86032 5.25 5.05109 5.25 5.25Z" fill="#282E4C" stroke="#282E4C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M9 21H15" stroke="#282E4C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M12 17.25V21" stroke="#282E4C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M18.582 12H19.5008C20.2964 12 21.0595 11.6839 21.6221 11.1213C22.1847 10.5587 22.5008 9.79565 22.5008 9V7.5C22.5008 7.30109 22.4218 7.11032 22.2811 6.96967C22.1405 6.82902 21.9497 6.75 21.7508 6.75H18.7508" stroke="#282E4C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M5.43906 12H4.49219C3.69654 12 2.93348 11.6839 2.37087 11.1213C1.80826 10.5587 1.49219 9.79565 1.49219 9V7.5C1.49219 7.30109 1.57121 7.11032 1.71186 6.96967C1.85251 6.82902 2.04328 6.75 2.24219 6.75H5.24219" stroke="#282E4C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </div>
+                                <span class="rate__top-item-nickname">pro3221337</span>
+                                <span class="rate__top-item-percent">97%</span>
+                            </div>
+                        </div>
+                        <div class="rate__list-all">
+                            <div class="rate__list-person">
+                                <span>1. pro3221337</span>
+                                <span>99%</span>
+                            </div>
+                            <div class="rate__list-person">
+                                <span>1. pro3221337</span>
+                                <span>99%</span>
+                            </div>
+                            <div class="rate__list-person">
+                                <span>1. pro3221337</span>
+                                <span>99%</span>
+                            </div>
+                            <div class="rate__list-person">
+                                <span>1. pro3221337</span>
+                                <span>99%</span>
+                            </div>
+                            <div class="rate__list-person">
+                                <span>1. pro3221337</span>
+                                <span>99%</span>
+                            </div>
+                            <div class="rate__list-person">
+                                <span>1. pro3221337</span>
+                                <span>99%</span>
+                            </div>
+                            <div class="rate__list-person">
+                                <span>1. pro3221337</span>
+                                <span>99%</span>
+                            </div>
+                            <div class="rate__list-person">
+                                <span>1. pro3221337</span>
+                                <span>99%</span>
+                            </div>
+                            <div class="rate__list-person">
+                                <span>1. pro3221337</span>
+                                <span>99%</span>
+                            </div>
+                            <div class="rate__list-person">
+                                <span>1. pro3221337</span>
+                                <span>99%</span>
+                            </div>
+                            <div class="rate__list-person">
+                                <span>1. pro3221337</span>
+                                <span>99%</span>
+                            </div>
+                            <div class="rate__list-person">
+                                <span>1. pro3221337</span>
+                                <span>99%</span>
+                            </div>
+                            <div class="rate__list-person">
+                                <span>1. pro3221337</span>
+                                <span>99%</span>
+                            </div>
+                            <div class="rate__list-person">
+                                <span>1. pro3221337</span>
+                                <span>99%</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="tests" class="tests">
+        <div class="tests__container container">
+            <div class="manualQA">
+                <div class="testStart">
+                    <div class="tests__header ">
+                        <button class="tests__back-button">
+                            <svg width="26" height="22" viewBox="0 0 26 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M25.4014 10.8867C25.4014 11.5495 24.8641 12.0867 24.2014 12.0867L4.47102 12.0867L11.8763 19.492C12.345 19.9607 12.345 20.7205 11.8763 21.1891C11.4077 21.6577 10.6479 21.6577 10.1793 21.1891L0.725436 11.7352C0.256807 11.2666 0.256807 10.5068 0.725436 10.0382L10.1793 0.584352C10.6479 0.115723 11.4077 0.115723 11.8763 0.584352C12.345 1.05298 12.345 1.81278 11.8763 2.28141L4.47102 9.68672L24.2014 9.68672C24.8641 9.68672 25.4014 10.224 25.4014 10.8867Z" fill="#C4AEF2"/>
+                            </svg>
+                        </button>
+                        <h3 class="tests__title">
+                            Manual QA
+                        </h3>
+                    </div>
+                    <div class="test__startScreen ">
+                        <div class="test__thems">
+                            <h4 class="test__thems-title">Темы:</h4>
+                            <ul class="test__thems-list">
+                                <li class="test__thems-item">
+                                    Методологии тестирования
+                                </li>
+                                <li class="test__thems-item">
+                                    Базы данных
+                                </li>
+                                <li class="test__thems-item">
+                                    Ручное функциональное тестирование
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="test__change">
+                            <h4 class="test__thems-title">Выбор формата прохождения:</h4>
+                            <div class="test__change-buttons">
+                                <div class="test__change-button">
+                                    <input id="withoutTime" type="radio" name="timeTest">
+                                    <label for="withoutTime">
+                                        <p class="test__button-title">Пройти тест</p>
+                                        <span class="test__button-desc">Без ограничения времени</span>
+                                    </label>
+                                </div>
+                                <div class="test__change-button">
+                                    <input id="withTime" type="radio" name="timeTest">
+                                    <label for="withTime">
+                                        <p class="test__button-title">Пройти тест на время</p>
+                                        <span class="test__button-desc">Ощути себя на реальном собеседовании</span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="startTestButton">
+                            Начать прохождение
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="test__body">
+        <div id="question1" class="test__body-container testImg container">
+            <div class="test__column">
+                <div class="test__quest-header">
+                    <div class="quest__counter">
+                        <p class="quest__counter-text">Вопрос <span class="qest__counter-num">1/30</span></p>
+                    </div>
+                    <div class="test__qest-name">
+                        Manual QA
+                    </div>
+                </div>
+                <div class="test__question">
+                    <div class="test__question-header">
+                        <h3 class="test__question-title">
+                            Как проверить, что все обязательные поля в форме работают корректно?
+                        </h3>
+                        <p class="test__question-subtitle">
+                            Можно выбрать несколько вариантов
+                        </p>
+                    </div>
+                    <div class="test__answers">
+                        <div class="test__answers-item">
+                            <input class="answerCheckBox" id="answer" type="checkbox">
+                            <label class="answer__text" for="answer">
+                                Оставьте все обязательные поля пустыми и попытайтесь отправить форму. <br> Удостоверьтесь, что появляются сообщения об ошибке рядом с каждым обязательным полем
+                            </label>
+                        </div>
+                        <div class="test__answers-item">
+                            <input class="answerCheckBox" id="answer1" type="checkbox">
+                            <label class="answer__text" for="answer1">
+                                Заполните только часть обязательных полей и попытайтесь отправить форму. Убедитесь, что система не позволяет отправить форму, пока все обязательные поля не будут заполнены.
+                            </label>
+                        </div>
+                        <div class="test__answers-item">
+                            <input class="answerCheckBox" id="answer2" type="checkbox">
+                            <label class="answer__text" for="answer2">
+                                Заполните обязательные поля некорректными данными (например, текст в поле с email).
+                                Проверьте, что система отображает сообщения об ошибке в случае ввода недопустимых данных.
+                            </label>
+                        </div>
+                        <div class="test__answers-item">
+                            <input class="answerCheckBox" id="answer3" type="checkbox">
+                            <label class="answer__text" for="answer3">
+                                Убедитесь, что обязательные поля визуально выделены, например, звездочкой или цветом фона. Проверьте, что визуальные индикаторы соответствуют ожидаемому дизайну.
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="test__buttons">
+                    <button class="prewQuestion">
+                        Вернуться к предыдущему
+                    </button>
+                    <button class="nextQuestion">
+                        Перейти к следующему
+                    </button>
+                </div>
+            </div>
+            <div class="test__column img">
+                <div class="test__img">
+                    <img src="/img/testImg.jpg" alt="">
+                </div>
+            </div>
+        </div>
+        <div id="question2" class="test__body-container container">
+            <div class="test__column">
+                <div class="test__quest-header">
+                    <div class="quest__counter">
+                        <p class="quest__counter-text">Вопрос <span class="qest__counter-num">2/30</span></p>
+                    </div>
+                    <div class="test__qest-name">
+                        Manual QA
+                    </div>
+                </div>
+                <div class="test__question">
+                    <div class="test__question-header">
+                        <h3 class="test__question-title">
+                            Какое из перечисленных видов тестирования используется после сборки кода и использует только положительные сценарии?
+                        </h3>
+                    </div>
+                    <div class="test__answers">
+                        <div class="test__answers-item">
+                            <input class="answerCheckBox" id="answer5" type="checkbox">
+                            <label class="answer__text" for="answer5">
+                                Дымовое (Smoke)
+                            </label>
+                        </div>
+                        <div class="test__answers-item">
+                            <input class="answerCheckBox" id="answer6" type="checkbox">
+                            <label class="answer__text" for="answer6">
+                                Санитарное
+                            </label>
+                        </div>
+                        <div class="test__answers-item">
+                            <input class="answerCheckBox" id="answer7" type="checkbox">
+                            <label class="answer__text" for="answer7">
+                                Регрессионное
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="test__buttons">
+                    <button class="prewQuestion">
+                        Вернуться к предыдущему
+                    </button>
+                    <button id="testEndBtn" class="nextQuestion">
+                        Перейти к следующему
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="testEnd" class="testEnd">
+        <div class="testEnd__container container">
+            <div class="testEnd__body">
+                <div class="testEnd__icon">
+                    <svg width="39" height="39" viewBox="0 0 39 39" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M16.6335 27.2945L9.28691 19.948L11.7358 17.4991L16.6335 22.3968L26.4289 12.6014L28.8778 15.0503L16.6335 27.2945Z" fill="#E3DEEC"/>
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M0.628906 19.825C0.628906 9.30525 9.15682 0.777344 19.6765 0.777344C30.1962 0.777344 38.7241 9.30525 38.7241 19.825C38.7241 30.3447 30.1962 38.8726 19.6765 38.8726C9.15682 38.8726 0.628906 30.3447 0.628906 19.825ZM19.6765 35.4094C11.0695 35.4094 4.09211 28.432 4.09211 19.825C4.09211 11.2179 11.0695 4.24055 19.6765 4.24055C28.2836 4.24055 35.2609 11.2179 35.2609 19.825C35.2609 28.432 28.2836 35.4094 19.6765 35.4094Z" fill="#E3DEEC"/>
+                    </svg>
+                </div>
+                <div class="testEnd__title">
+                    <div class="testEnd-title">Вы завершили блок <br> “Методологии тестирования”</div>
+                </div>
+                <div class="testEnd-BlockName">Manual QA</div>
+                <div class="testEnd-span">До завершения модуля осталось: 3 блока</div>
+                <div class="testEnd__button">
+                    <button class="prewQuestion">Завершить тест</button>
+                    <button class="nextQuestion" id="moduleBtn">Перейти к следующему</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="moduleEnd" class="testEnd">
+        <div class="testEnd__container container">
+            <div class="testEnd__body">
+                <div class="testEnd__icon">
+                    <svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M10.9375 10.9375V21.6992C10.9375 29.4531 17.1484 35.8789 24.9023 35.9375C26.7573 35.9504 28.5964 35.5962 30.3138 34.8952C32.0313 34.1943 33.593 33.1605 34.9092 31.8534C36.2254 30.5463 37.27 28.9917 37.9828 27.2791C38.6956 25.5666 39.0625 23.73 39.0625 21.875V10.9375C39.0625 10.5231 38.8979 10.1257 38.6049 9.83265C38.3118 9.53962 37.9144 9.375 37.5 9.375H12.5C12.0856 9.375 11.6882 9.53962 11.3951 9.83265C11.1021 10.1257 10.9375 10.5231 10.9375 10.9375Z" fill="#E3DEEC" stroke="#E3DEEC" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M18.75 43.75H31.25" stroke="#E3DEEC" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M25 35.9375V43.75" stroke="#E3DEEC" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M38.7109 25H40.625C42.2826 25 43.8723 24.3415 45.0444 23.1694C46.2165 21.9973 46.875 20.4076 46.875 18.75V15.625C46.875 15.2106 46.7104 14.8132 46.4174 14.5201C46.1243 14.2271 45.7269 14.0625 45.3125 14.0625H39.0625" stroke="#E3DEEC" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M11.3281 25H9.35547C7.69787 25 6.10815 24.3415 4.93605 23.1694C3.76395 21.9973 3.10547 20.4076 3.10547 18.75V15.625C3.10547 15.2106 3.27009 14.8132 3.56311 14.5201C3.85614 14.2271 4.25357 14.0625 4.66797 14.0625H10.918" stroke="#E3DEEC" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+                <div class="testEnd__title">
+                    <div class="testEnd-title">Вы завершили модуль</div>
+                </div>
+                <div class="testEnd-BlockName">Manual QA</div>
+                <span class="right__qest">10/12</span>
+                <div class="testEnd-span">правильных ответов</div>
+                <div class="testEnd__button">
+                    <button class="nextQuestion" id="backModule">Вернуться к модулям</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="footer">
+        <div class="footer__container container">
+            <div class="footer__content">
+                <a href="" class="footer__link">Политика конфиденциальности</a>
+                <a href="" class="footer__link">Связаться с нами</a>
+            </div>
+        </div>
+    </footer>
+    <div id="signUp" class="signUp">
+        <div class="signUp__body">
+            <p class="signUp__title">Регистрация</p>
+            <form action="" class="signUp__form">
+                <input id="Email" type="text" placeholder="Email" required>
+                <input id="UserName" type="text" placeholder="Имя пользователя" required>
+                <input id="Telegram" type="text" placeholder="Telegram Username" required>
+                <input id="Password" type="text" placeholder="******" required>
+                <input id="Password_repeat" type="text" placeholder="******" required>
+                <input id="speciality" type="text" placeholder="Специальность" required>
+                <button id="signUp__submit-button">Зарегистрироваться</button>
+            </form>
+            <div id="SignUp__close_icon">
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M14 1.41L12.59 0L7 5.59L1.41 0L0 1.41L5.59 7L0 12.59L1.41 14L7 8.41L12.59 14L14 12.59L8.41 7L14 1.41Z" fill="#E3DEEC"/>
+                </svg>
+            </div>
+        </div>
+        <div id="signUp__BG"></div>
+    </div>
+    <div id="LogIn" class="LogIn">
+        <div class="signUp__body">
+            <p class="signUp__title">Авторизация</p>
+            <form action="" class="signUp__form">
+                <input id="Email" type="text" placeholder="Email" required>
+                <input id="Password" type="text" placeholder="Пароль" required>
+                <button id="RestorePassword" class="password_forgot">Восстановить пароль</button>
+                <button id="signUp__submit-button">Войти</button>
+            </form>
+            <span class="form__qest">Ещё не зарегистрированы на нашей платформе?</span>
+            <button id="LogIn__to__signUp">Зарегистрироваться</button>
+            <div id="LogIn__close_icon">
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M14 1.41L12.59 0L7 5.59L1.41 0L0 1.41L5.59 7L0 12.59L1.41 14L7 8.41L12.59 14L14 12.59L8.41 7L14 1.41Z" fill="#E3DEEC"/>
+                </svg>
+            </div>
+        </div>
+        <div id="LogIn__BG"></div>
+    </div>
+    <div class="user__menu" id="user_menu">
+        <button class="user__menu-button" id="change_password">Сменить пароль</button>
+        <a class="user__menu-button" href="">Личный рейтинг:</a>
+        <a class="user__menu-button second" href="">#2 Manual QA</a>
+        <a class="user__menu-button second" href="">#11 Automation QA </a>
+        <button class="user__menu-button" id="LogOut">Выйти</button>
+    </div>
+    <div id="closeUserBg" class="user__bg-mobile"></div>
+    <div id="out" class="out">
+        <div class="out__body signUp__body">
+            <span class="out__title">
+                Вы уверены, что хотите выйти?
+            </span>
+            <div class="out__buttons">
+                <button id="button_continue" class="out__button">Остаться</button>
+                <button id="button_out" class="out__button active">Выйти</button>
+            </div>
+        </div>
+        <div id="out__bg"></div>
+    </div>
+    <div id="passwordChange" class="password__change">
+        <div class="password__change-body signUp__body">
+            <span class="password__change-title">
+                Сменить пароль
+            </span>
+            <form action="" class="password__change-form signUp__form">
+                <input type="text" placeholder="Старый пароль">
+                <input type="text" placeholder="Новый пароль">
+                <input type="text" placeholder="Подтвердите пароль">
+                <button class="password__change_button">Сменить пароль</button>
+            </form>
+            <div id="passwordChange__close_icon">
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M14 1.41L12.59 0L7 5.59L1.41 0L0 1.41L5.59 7L0 12.59L1.41 14L7 8.41L12.59 14L14 12.59L8.41 7L14 1.41Z" fill="#E3DEEC"/>
+                </svg>
+            </div>
+        </div>
+        <div id="passwordChange_bg"></div>
+    </div>
+    <div class="connectFalse">
+        <div class="connectFalse__title">
+            Отсутствует подключение к интернету
+        </div>
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M4.5 3.75L19.5 20.25" stroke="#E3DEEC" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M10.0391 5.39067C10.6879 5.29621 11.3428 5.24921 11.9984 5.25005C15.6109 5.24033 19.0799 6.66299 21.6453 9.2063" stroke="#E3DEEC" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M2.35156 9.20586C3.62319 7.9467 5.12986 6.94968 6.78594 6.27148" stroke="#E3DEEC" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M14.2578 10.0312C15.8463 10.4247 17.3 11.2373 18.4672 12.3844" stroke="#E3DEEC" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M5.53125 12.3844C6.79684 11.146 8.39118 10.2968 10.125 9.9375" stroke="#E3DEEC" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M8.71094 15.5725C9.55639 14.7652 10.6687 14.2964 11.8369 14.255C13.0051 14.2135 14.1479 14.6022 15.0484 15.3475" stroke="#E3DEEC" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M12.125 18.75C12.125 18.819 12.069 18.875 12 18.875C11.931 18.875 11.875 18.819 11.875 18.75C11.875 18.681 11.931 18.625 12 18.625C12.069 18.625 12.125 18.681 12.125 18.75Z" fill="#E3DEEC" stroke="#E3DEEC" stroke-width="2"/>
+        </svg>
+        <button class="connectFalse__button">Обновить страницу</button>
+    </div>
+    </div>
+</body>
+</html>
