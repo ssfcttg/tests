@@ -1,5 +1,14 @@
 // Функция для переключения кнопки 
 
+document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape') {
+        signUp_form.classList.remove("active");
+        LogIn_form.classList.remove("active");
+        passwordChange.classList.remove("active")
+        out.classList.remove("active");
+    }
+  });
+
 const rect = document.getElementById('switch');
 const changeButton = document.getElementById('switch_button');
 let previousX = rect.getAttribute('x');
@@ -46,9 +55,6 @@ if (LogIn_button && LogIn_form && LogIn_close && LogIn_bg && LogIn_to_signUp) {
 }
 // Вызов окна авторизация
 
-
-
-
 document.addEventListener('DOMContentLoaded', function() {
     var headerState = localStorage.getItem('headerState');
     var moduleBlock = document.querySelector('.module');
@@ -68,9 +74,8 @@ document.addEventListener('DOMContentLoaded', function() {
         var telegram = document.getElementById('Telegram').value;
         var password = document.getElementById('Password').value;
         var passwordRepeat = document.getElementById('Password_repeat').value;
-        var speciality = document.getElementById('speciality').value;
 
-        if (email !== '' && username !== '' && telegram !== '' && password !== '' && passwordRepeat !== '' && speciality !== '') {
+        if (email !== '' && username !== '' && telegram !== '' && password !== '' && passwordRepeat !== '') {
             headerElement.classList.remove('start');
             localStorage.setItem('headerState', 'noStart');
             moduleBlock.style.display = 'block';
@@ -102,6 +107,19 @@ if (signUp_button && signUp_form && signUp_close && signUp_Bg) {
     });
 }
 // ВЫзов окна регистрации
+
+// окно подтверждения
+const confirmation = document.getElementById("confirmation")
+const confirmationBG = document.getElementById("confirmation_bg")
+const confirmationClose = document.getElementById("confirmation__close")
+confirmationClose.onclick = () => {
+    confirmation.classList.remove("active")
+}
+confirmationBG.onclick = () => {
+    confirmation.classList.remove("active")
+}
+
+// окно подтверждения
 
 // Открытие меню пользоватия при клике на иконку
 var user = document.getElementById("user");
@@ -245,18 +263,18 @@ document.addEventListener('DOMContentLoaded', function() {
     и делать так что бы при lock true таб был недоступен для выбора
 */ 
 
-// код для шапки
-document.addEventListener('DOMContentLoaded', function() {
-    var header = document.querySelector('.header');
+// // код для шапки
+// document.addEventListener('DOMContentLoaded', function() {
+//     var header = document.querySelector('.header');
 
-    window.addEventListener('scroll', function() {
-        if (window.scrollY > 0) {
-            header.classList.add('scrolled');
-        } else {
-            header.classList.remove('scrolled');
-        }
-    });
-});
+//     window.addEventListener('scroll', function() {
+//         if (window.scrollY > 0) {
+//             header.classList.add('scrolled');
+//         } else {
+//             header.classList.remove('scrolled');
+//         }
+//     });
+// });
 
 function checkInternetConnection() {
     var connectFalse = document.querySelector('.connectFalse');
@@ -282,6 +300,7 @@ let main = document.getElementById("main");
 let module = document.getElementById("module");
 let statBack = document.getElementById("statBack");
 var headerElement = document.querySelector('.header');
+const testsClass = document.getElementById("tests");
 
 let rateButton = document.getElementById("rateButton");
 let rate = document.getElementById("rate");
@@ -296,14 +315,16 @@ statButton.addEventListener("click", function(){
     headerElement.classList.remove('rating');
 });
 statBack.addEventListener("click", function(){
-    statistics.classList.remove("show")
-    main.classList.remove("hide")
-    module.classList.remove("hideModule")
-    headerElement.classList.remove('stat');
+    if (testsClass.classList.contains("active")) {
+        statistics.classList.remove("show")
+        headerElement.classList.remove('stat');
+    } else {
+        statistics.classList.remove("show")
+        main.classList.remove("hide")
+        module.classList.remove("hideModule")
+        headerElement.classList.remove('stat');
+    }
 });
-
-
-
 
 rateButton.addEventListener("click", function(){
     rate.classList.add("show") 
@@ -312,12 +333,20 @@ rateButton.addEventListener("click", function(){
     module.classList.add("hideModule")
     statistics.classList.remove("show")
     headerElement.classList.remove('stat');
+    footer.classList.add("hide")
 })
 rateBack.addEventListener("click", function(){
-    rate.classList.remove("show") 
-    headerElement.classList.remove('rating');
-    main.classList.remove("hide")
-    module.classList.remove("hideModule")
+    if (testsClass.classList.contains("active")) {
+        rate.classList.remove("show") 
+        headerElement.classList.remove('rating');
+        footer.classList.remove("hide")
+    } else {
+        rate.classList.remove("show") 
+        headerElement.classList.remove('rating');
+        module.classList.remove("hideModule")
+        main.classList.remove("hide")
+        footer.classList.remove("hide")
+    }
 })
 
 var resultButton = document.querySelectorAll(".rate__showAll");
@@ -325,6 +354,9 @@ let rateList = document.getElementById("rate__list");
 let rateContent = document.getElementById("rate__content");
 let rateClose = document.getElementById("rateClose");
 let rateItem = document.querySelectorAll(".rate__item")
+let rateFiltersBtn = document.getElementById("rateFiltersBtn")
+let rateFilters = document.getElementById("rateFilters")
+let rateFiltersItem = document.querySelectorAll(".rate__filtersBtn")
 
 rateItem.forEach(button => { 
     button.addEventListener("click", () => { 
@@ -342,8 +374,28 @@ rateClose.addEventListener("click", function(){
     rateList.classList.remove("active");
     rateContent.classList.remove("hide")
 });
+rateFiltersBtn.onclick = () => {
+    rateFilters.classList.toggle("active")
+}
+rateFilters.onmouseleave = () => {
+    rateFilters.classList.remove("active")
+}
+rateFiltersItem.forEach((button) => {
+    button.onclick = () => {
+    rateFilters.classList.remove("active");
+    };
+});
+
 
 // активация тестов
+
+document.querySelectorAll('input[type="radio"]').forEach(function(radio) {
+    radio.addEventListener('change', function() {
+        document.querySelectorAll('.startTestButton').forEach(function(button) {
+            button.removeAttribute('disabled');
+        });
+    });
+});
 
 let testStartButton = document.querySelector(".startTestButton");
 let testStartScreen = document.querySelector(".testStart");
@@ -354,6 +406,11 @@ testStartButton.addEventListener("click", ()=>{
     testBg.classList.add("hide")
     testBody.classList.add("active")
 })
+
+
+// валидация форм
+
+// РЕГИСТРАЦИЯ
 
 
 // Следующий вопрос прототип
@@ -390,3 +447,6 @@ backToMain.onclick = () => {
     testStartScreen.classList.remove("hide")
     testBg.classList.remove("hide")
 }
+
+document.querySelector("#Special option").style.display = "none"
+  
