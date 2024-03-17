@@ -313,8 +313,10 @@ statButton.addEventListener("click", function(){
     headerElement.classList.add('stat');
     rate.classList.remove("show") 
     headerElement.classList.remove('rating');
+    testsClass.classList.add("hide")
 });
 statBack.addEventListener("click", function(){
+    testsClass.classList.remove("hide")
     if (testsClass.classList.contains("active")) {
         statistics.classList.remove("show")
         headerElement.classList.remove('stat');
@@ -386,6 +388,18 @@ rateFiltersItem.forEach((button) => {
     };
 });
 
+// politics
+const politics = document.getElementById("politics")
+const politicsBtn = document.getElementById("politicsBtn")
+const politicsClose = document.getElementById("politics__back")
+
+politicsBtn.onclick = () => {
+    politics.classList.add("active")
+}
+politicsClose.onclick = () => {
+    politics.classList.remove("active")
+}
+// politics
 
 // активация тестов
 
