@@ -1333,12 +1333,12 @@ body.light .user__menu-button:hover{
     font-size: 24px;
     line-height: 120%;
     padding: 10px;
-    color: #8D8CEC;
+    color: #5E5CE6;
     cursor: pointer;
 }
 .out__button.active{
     color: #E3DEEC;
-    background-color: #8D8CEC;
+    background-color: #5E5CE6;
     border-radius: 20px;
     padding: 10px 22px;
 }
@@ -3290,11 +3290,15 @@ body.light .testEnd__icon svg path{
     .test__body-container.testImg .test__column.img {
         display: block;
     }
+    .test__column {
+        padding: 0;
+        background: none;
+    }
 }
 @media (max-width: 500px) {
     .test__column {
         border-radius: 12px;
-        padding: 15px;
+        padding: 0;
     }
     .test__question-title {
         font-size: 18px;
@@ -3365,7 +3369,7 @@ body.light .testEnd__icon svg path{
     }
     .test__column {
         border-radius: 12px;
-        padding: 15px;
+        padding: 0;
     }
     .testEnd__body {
         border-radius: 14px;
@@ -3469,5 +3473,71 @@ body.light .error__back{
     }
     body.light .error__body{
         background: none;
+    }
+}
+.politics{
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    background-color: #1f2027c5;
+}
+.politics.active{
+    display: flex;
+}
+.politics__title{
+    font-size: 32px;
+    font-family: "Raleway", sans-serif;
+    margin-bottom: 10px;
+    font-weight: 400;
+    text-align: left;
+    margin-bottom: 32px;
+}
+.politics__text{
+    font-size: 16px;
+    line-height: 1.2;
+    max-height: 400px;
+    overflow-y: scroll;
+    padding-right: 15px;
+}
+.politics__body{
+    max-width: 560px;
+    background-color: #272934;
+    border-radius: 20px;
+    padding: 50px;
+    position: relative;
+}
+body.light .politics__body{
+    background-color: #F0EFF2;
+}
+.politics__back{
+    position: absolute;
+    top: 25px;
+    right: 25px;
+    cursor: pointer;
+}
+body.light .politics__back svg path{
+    fill: #1F2027;
+}
+@media (max-width: 750px) {
+    .politics__body{
+        max-width: 100%;
+        width: 100%;
+        border-radius: 0;
+        max-height: 100%;
+        height: 100vh;
+        padding: 15px;
+    }
+    .politics__title{
+        font-size: 24px;
+    }
+    .politics__text{
+        max-height: 500px;
+        font-size: 14px;
     }
 }
